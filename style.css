@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
+    grid-template-rows: auto 1fr auto; /* Автоматическая высота для заголовка и подвала, основное пространство занимает оставшуюся высоту */
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    gap: 10px; /* Промежутки между элементами */
+}
+
+.header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+}
