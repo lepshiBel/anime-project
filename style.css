@@ -1,6 +1,11 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "FredokaOneRegular"; 
+    font-size: x-large;
+}
+
+h2 {
+    font-family: "FredokaOneRegular"; 
 }
 
 .container {
@@ -15,10 +20,94 @@ body {
 }
 
 .header {
+    display: grid;
+    grid-template-columns: 15% 30% 55%; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
+    grid-template-areas: 
+        "website-logo website-name header-content";
+    gap: 10px;
     grid-area: header;
-    background-color: #4CAF50;
+    background-color: #4f473e;
     color: white;
     padding: 20px;
+}
+
+.website-logo {
+    grid-area: website-logo;
+    align-self: center;
+}
+
+#website-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    height: 80px;
+}
+
+.website-name {
+    grid-area: website-name;
+    align-self: center;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas: 
+        "search-info"
+        "search";
+    gap: 10px;
+    grid-area: header-content;
+    align-self: center;
+}
+
+form {
+    position: relative;
+    margin: 0 auto;
+}
+
+.search-info {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    grid-area: search-info;
+    align-self: center;
+    font-family: "ArchisticoRegular"; 
+}
+
+#search-info {
+    font-family: "ArchisticoRegular"; 
+}
+
+.search-info select {
+    appearance: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.325em 3em 0.325em 0.5em;
+    background-color: #ffffff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.search {
+    grid-area: search;
+    align-self: center;
+}
+
+#website-search {
+    width: 90%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    font-family: "ArmWrestlerRegular";
 }
 
 .main {
@@ -29,7 +118,35 @@ body {
 
 .footer {
     grid-area: footer;
-    background-color: #4CAF50;
+    background-color: #38322c;
     color: white;
     padding: 20px;
+}
+
+@font-face {
+    font-family: "FredokaOneRegular";  
+    src: url("./fonts/FredokaOne-Regular.otf") format("opentype"); 
+    font-style: normal; 
+    font-weight: normal;
+     }
+     
+@font-face {
+    font-family: "ArchisticoRegular";
+    src: url("./fonts/Archistico_Simple.ttf") format("truetype");
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: "ArchisticoBold";
+    src: url("./fonts/Archistico_Bold.ttf") format("truetype");
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: "ArmWrestlerRegular";
+    src: url("./fonts/ArmWrestler.ttf") format("truetype");
+    font-style: normal; 
+    font-weight: normal; 
 }

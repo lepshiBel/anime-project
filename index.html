@@ -10,7 +10,30 @@
     </head>
     <body>
         <div class="container">
-            <header class="header">Header</header>
+            <header class="header">
+                <div class="website-logo">
+                    <img id="website-logo" src="./images/website-logo.png" alt="website logo">
+                </div>
+                <div class="website-name">
+                    <h2>Anime searcher</h2>
+                </div>
+                <div class="header-content">
+                    <div class="search-info">
+                        <form>
+                            <label for="search-info">Browse </label>
+                            <select id="search-info" name="search-info" onchange="handleInfoChange()">
+                              <option value="anime">Anime</option>
+                              <option value="manga">Manga</option>
+                              <option value="characters">Characters</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="search">
+                        <input type="search" id="website-search" name="search-button" placeholder="Search" oninput="searchImages()"/>
+                    </div>
+          
+                </div>               
+            </header>
             <main class="main">Main content</main>
             <footer class="footer">Footer</footer>
         </div>
