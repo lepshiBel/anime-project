@@ -6,11 +6,15 @@
         <link rel="icon" type="image/png" href="images/website-logo.png">
         <link href="style.css" rel="stylesheet">
         <title>Web project</title>
+         <!-- Compiled and minified CSS -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <!-- Compiled and minified JavaScript -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="./script.js"></script>
     </head>
-    <body>
         <div class="container">
-            <header class="header">
+            <header id="header">
                 <div class="website-logo">
                     <img id="website-logo" src="./images/website-logo.png" alt="website logo">
                 </div>
@@ -19,23 +23,45 @@
                 </div>
                 <div class="header-content">
                     <div class="search-info">
-                        <form>
-                            <label for="search-info">Browse </label>
-                            <select id="search-info" name="search-info" onchange="handleInfoChange()">
-                              <option value="anime">Anime</option>
-                              <option value="manga">Manga</option>
-                              <option value="characters">Characters</option>
-                            </select>
-                        </form>
+                        <label for="search-info">Browser</label>
+                        <select class="browser-default" id="search-info" name="search-info">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="anime">Anime</option>
+                            <option value="manga">Manga</option>
+                            <option value="characters">Characters</option>
+                        </select>               
                     </div>
                     <div class="search">
-                        <input type="search" id="website-search" name="search-button" placeholder="Search" oninput="searchImages()"/>
+                        <form id="search-form">
+                            <label for="website-search">Search</label>
+                            <input type="text" id="website-search" name="website-search" placeholder="Search"/>
+                        </form>  
                     </div>
-          
                 </div>               
             </header>
-            <main class="main">Main content</main>
-            <footer class="footer">Footer</footer>
+            <main id="main">
+                <section class="anime-section">
+                    <div class="trending-anime">
+                        <h3>Trending Anime</h3>
+                        <div id="search-results">
+
+                        </div>
+                        <!-- <div class="trending-anime-2"></div>
+                        <div class="trending-anime-3"></div>
+                        <div class="trending-anime-4"></div>
+                        <div class="trending-anime-5"></div> -->
+                    </div>
+                </section>
+                <section class="manga-section">
+                    <div class="trending-manga">
+                        <h3>Trending Manga</h3>
+                    </div>
+                </section>
+                <section class="characters-section">
+                    <h3>Characters</h3>
+                </section>
+            </main>
+            <footer id="footer">Footer</footer>
         </div>
     </body>
 </html>

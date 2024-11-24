@@ -1,11 +1,9 @@
 body {
     margin: 0;
-    font-family: "FredokaOneRegular"; 
-    font-size: x-large;
 }
 
 h2 {
-    font-family: "FredokaOneRegular"; 
+    font-family: "ArchisticoBold"; 
 }
 
 .container {
@@ -16,15 +14,15 @@ h2 {
         "header"
         "main"
         "footer";
-    gap: 10px; /* Промежутки между элементами */
+    gap: 20px; /* Промежутки между элементами */
 }
 
-.header {
+#header {
     display: grid;
-    grid-template-columns: 15% 30% 55%; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
+    grid-template-columns: 1fr 2fr 3fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
     grid-template-areas: 
         "website-logo website-name header-content";
-    gap: 10px;
+    gap: 20px;
     grid-area: header;
     background-color: #4f473e;
     color: white;
@@ -73,11 +71,10 @@ form {
     margin-right: auto;
     grid-area: search-info;
     align-self: center;
-    font-family: "ArchisticoRegular"; 
 }
 
 #search-info {
-    font-family: "ArchisticoRegular"; 
+    font-family: "FredokaOneRegular"; 
 }
 
 .search-info select {
@@ -98,6 +95,9 @@ form {
 }
 
 #website-search {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
     width: 90%;
     height: 42px;
     padding-left: 10px;
@@ -107,16 +107,16 @@ form {
     background: #ffffff;
     color: #000000;
     font-size: 1rem;
-    font-family: "ArmWrestlerRegular";
+    font-family: "FredokaOneRegular";
 }
 
-.main {
+#main {
     grid-area: main;
     background-color: #ffffff;
     padding: 20px;
 }
 
-.footer {
+#footer {
     grid-area: footer;
     background-color: #38322c;
     color: white;
