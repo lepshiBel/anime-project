@@ -1,152 +1,328 @@
-body {
-    margin: 0;
+html, body {
+  margin: 0;
+  overflow-x: hidden; /* Скрытие горизонтальной полосы прокрутки */
 }
 
 h2 {
-    font-family: "ArchisticoBold"; 
+  font-family: "ArchisticoBold";
+}
+
+h3 {
+  font-family: "ArmWrestlerRegular";
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
-    grid-template-rows: auto 1fr auto; /* Автоматическая высота для заголовка и подвала, основное пространство занимает оставшуюся высоту */
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    gap: 20px; /* Промежутки между элементами */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  gap: 20px;
 }
 
-#header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 3fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
-    grid-template-areas: 
-        "website-logo website-name header-content";
-    gap: 20px;
-    grid-area: header;
-    background-color: #4f473e;
-    color: white;
-    padding: 20px;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  grid-template-areas:
+    "website-logo website-name header-content";
+  gap: 20px;
+  grid-area: header;
+  background-color: #4f473e;
+  color: white;
+  padding: 20px;
 }
 
 .website-logo {
-    grid-area: website-logo;
-    align-self: center;
+  grid-area: website-logo;
+  align-self: center;
 }
 
 #website-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80px;
-    height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 80px;
 }
 
 .website-name {
-    grid-area: website-name;
-    align-self: center;
+  grid-area: website-name;
+  align-self: center;
 }
 
 .header-content {
-    display: grid;
-    grid-template-columns: 1fr; /* Две колонки: первая занимает 1 часть, вторая - 3 части */
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
-    grid-template-areas: 
-        "search-info"
-        "search";
-    gap: 10px;
-    grid-area: header-content;
-    align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "search-info"
+    "search";
+  gap: 10px;
+  grid-area: header-content;
+  align-self: center;
 }
 
 form {
-    position: relative;
-    margin: 0 auto;
+  position: relative;
+  margin: 0 auto;
 }
 
 .search-info {
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-    grid-area: search-info;
-    align-self: center;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  grid-area: search-info;
+  align-self: center;
 }
 
 #search-info {
-    font-family: "FredokaOneRegular"; 
+  font-family: "FredokaOneRegular";
 }
 
 .search-info select {
-    appearance: none;
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.325em 3em 0.325em 0.5em;
-    background-color: #ffffff;
-    border: 1px solid #caced1;
-    border-radius: 0.25rem;
-    color: #000;
-    cursor: pointer;
+  appearance: none;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.325em 3em 0.325em 0.5em;
+  background-color: #ffffff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
 }
 
 .search {
-    grid-area: search;
-    align-self: center;
+  grid-area: search;
+  align-self: center;
 }
 
 #website-search {
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-    width: 90%;
-    height: 42px;
-    padding-left: 10px;
-    border: 2px solid #7BA7AB;
-    border-radius: 5px;
-    outline: none;
-    background: #ffffff;
-    color: #000000;
-    font-size: 1rem;
-    font-family: "FredokaOneRegular";
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 90%;
+  height: 42px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-family: "FredokaOneRegular";
 }
 
-#main {
-    grid-area: main;
-    background-color: #ffffff;
-    padding: 20px;
+.main {
+  grid-area: main;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Скрытие горизонтальной полосы прокрутки в основном контейнере */
 }
 
-#footer {
-    grid-area: footer;
-    background-color: #38322c;
-    color: white;
-    padding: 20px;
+.created-row {
+  display: flex; /* Используем flex-контейнер */
+  flex-direction: row; /* Ряд горизонтально */
+  flex-wrap: nowrap; /* Не переносить элементы на новую строку */
+  overflow-x: auto; /* Включаем горизонтальную прокрутку */
+  overflow-y: hidden; /* Отключаем вертикальную прокрутку */
+  padding-bottom: 10px; /* Отступ для удобства прокрутки */
+}
+
+  /* Установка ширины карточек */
+  .created-row > * {
+    flex-basis: 20rem; /* Ширина карточек */
+    flex-shrink: 0; /* Не сжимать карточки */
+    height: 600px; /* Фиксированная высота для всех карточек */
+    margin-right: 10px; /* Отступ между карточками */
+  }
+
+  /* Настройка карточек */
+  .created-row .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Занять всю высоту родителя */
+    overflow: hidden; /* Скрыть переполнение */
+  }
+
+    /* Настройка содержимого карточек */
+    .created-row .card > .card-content {
+      flex-grow: 1;
+      overflow-y: auto; /* Вертикальная прокрутка для содержимого карточки */
+    }
+
+.subcontainer {
+  flex-basis: 20rem; /* Ширина карточки */
+  flex-shrink: 0; /* Отключаем сжатие */
+  margin-right: 10px; /* Отступ между карточками */
+}
+
+/* Скрытие полосы прокрутки для содержимого карточек */
+.card-content::-webkit-scrollbar {
+  display: none; /* Скрыть полосу прокрутки в WebKit браузерах */
+}
+
+.card-content {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Настройка изображений в карточках */
+.created-row .card > .card-image {
+  flex-basis: 25rem;
+  flex-shrink: 0;
+  overflow-y: hidden;
+  background-color: grey;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "about social-media";
+  gap: 20px;
+  grid-area: footer;
+  background-color: #38322c;
+  color: white;
+  padding: 20px;
+}
+
+.footer-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.social-media {
+  grid-area: social-media;
+  filter: brightness(0) invert(1);
+  justify-self: end;
+  font-family: "FredokaOneRegular";
+}
+
+.about {
+  grid-area: about;
+  font-family: "FredokaOneRegular";
+}
+
+/* Общие стили для всех устройств выше остаются неизменными */
+
+/* Адаптивные стили для экранов до 768px (планшеты и телефоны) */
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr; /* Сетка из одной колонки */
+    grid-template-areas:
+      "website-logo"
+      "website-name"
+      "header-content";
+    text-align: center; /* Центрируем содержимое */
+    padding: 10px;
+  }
+
+  .website-logo img {
+    width: 60px;
+    height: 60px; /* Уменьшаем логотип */
+  }
+
+  .header-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px; /* Увеличиваем расстояние между элементами */
+  }
+
+  .search-info,
+  .search {
+    width: 100%; /* Занимает всю ширину контейнера */
+  }
+
+  .main {
+    padding: 10px; /* Добавляем отступы для удобства чтения */
+  }
+
+  .created-row {
+    flex-wrap: wrap; /* Карточки располагаются в несколько строк */
+    justify-content: center; /* Центрируем карточки */
+  }
+
+  .subcontainer {
+    flex-basis: calc(100% - 20px); /* Карточка занимает всю ширину */
+    margin: 10px 0; /* Отступы между карточками */
+  }
+
+  .card {
+    height: auto; /* Автоматическая высота */
+  }
+
+  .card-image {
+    height: auto; /* Изображение адаптируется под карточку */
+  }
+
+  .footer {
+    grid-template-columns: 1fr; /* Одна колонка для футера */
+    grid-template-areas:
+      "about"
+      "social-media";
+    text-align: center; /* Центрируем текст */
+  }
+
+  .social-media {
+    justify-self: center; /* Центрируем социальные иконки */
+  }
+
+  .footer-icon {
+    width: 24px; /* Уменьшаем размер иконок */
+    height: 24px;
+    margin: 0 5px; /* Добавляем отступы между иконками */
+  }
+}
+
+/* Адаптивные стили для экранов до 480px (телефоны) */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem; /* Уменьшаем заголовок */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* Уменьшаем подзаголовок */
+  }
+
+  .header {
+    padding: 5px; /* Уменьшаем отступы */
+  }
+
+  .card-content {
+    font-size: 0.9rem; /* Уменьшаем текст в карточках */
+  }
+
+  .card-action a {
+    font-size: 0.8rem; /* Уменьшаем текст ссылок */
+  }
 }
 
 @font-face {
-    font-family: "FredokaOneRegular";  
-    src: url("./fonts/FredokaOne-Regular.otf") format("opentype"); 
-    font-style: normal; 
-    font-weight: normal;
-     }
-     
-@font-face {
-    font-family: "ArchisticoRegular";
-    src: url("./fonts/Archistico_Simple.ttf") format("truetype");
-    font-style: normal; 
-    font-weight: normal; 
+  font-family: "FredokaOneRegular";
+  src: url("./fonts/FredokaOne-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
-    font-family: "ArchisticoBold";
-    src: url("./fonts/Archistico_Bold.ttf") format("truetype");
-    font-style: normal; 
-    font-weight: normal; 
+  font-family: "ArchisticoRegular";
+  src: url("./fonts/Archistico_Simple.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
-    font-family: "ArmWrestlerRegular";
-    src: url("./fonts/ArmWrestler.ttf") format("truetype");
-    font-style: normal; 
-    font-weight: normal; 
+  font-family: "ArchisticoBold";
+  src: url("./fonts/Archistico_Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ArmWrestlerRegular";
+  src: url("./fonts/ArmWrestler.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
