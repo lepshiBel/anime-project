@@ -1,14 +1,25 @@
 html, body {
   margin: 0;
-  overflow-x: hidden; /* Скрытие горизонтальной полосы прокрутки */
+  overflow-x: hidden;
+  background: url('./images/background23.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scrollbar-color: #4d4862 #040a1a;
+  scrollbar-width: none;
 }
 
 h2 {
-  font-family: "ArchisticoBold";
+  font-family: "CaprasimoRegular";
+  font-size: 50px !important;
+  color: #c1b9b1;
+  margin-left: -30px !important;
 }
 
 h3 {
   font-family: "ArmWrestlerRegular";
+  color: #987696;
 }
 
 .container {
@@ -29,9 +40,10 @@ h3 {
     "website-logo website-name header-content";
   gap: 20px;
   grid-area: header;
-  background-color: #4f473e;
-  color: white;
+  background-color: #302d40;
+  color: #eaeaea;
   padding: 20px;
+  border-radius: 0.5rem;
 }
 
 .website-logo {
@@ -43,8 +55,10 @@ h3 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80px;
-  height: 80px;
+  margin-top: 20px;
+  width: 160px;
+  height: 160px;
+  filter: brightness(80%);
 }
 
 .website-name {
@@ -65,115 +79,176 @@ h3 {
   align-self: center;
 }
 
-form {
-  position: relative;
-  margin: 0 auto;
+.search-info-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+  color: #c1b9b1
 }
 
 .search-info {
   display: block;
-  margin-left: 0;
-  margin-right: auto;
+  width: calc(100% - 10px) !important;
+  padding-left: 10px !important;
   grid-area: search-info;
   align-self: center;
 }
 
 #search-info {
   font-family: "FredokaOneRegular";
+  font-size: 1.05rem;
+  color: #38322d;
 }
 
 .search-info select {
   appearance: none;
   width: 100%;
-  font-size: 1rem;
   padding: 0.325em 3em 0.325em 0.5em;
-  background-color: #ffffff;
-  border: 1px solid #caced1;
-  border-radius: 0.25rem;
-  color: #000;
+  background-color: #c1b9b1;
+  border: 1px solid #c1b9b1;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
+  .search-info select:focus {
+    color: #38322d !important;
+    background-color: #c1b9b1 !important;
+    border-color: #bdbdbd !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.35rem rgba(158, 158, 158, 0.25) !important;
+  }
+
 .search {
-  grid-area: search;
-  align-self: center;
+  margin-bottom: 1rem;
 }
 
-#website-search {
+.website-search-label {
   display: block;
-  margin-left: 0;
-  margin-right: auto;
-  width: 90%;
-  height: 42px;
-  padding-left: 10px;
-  border: 2px solid #7BA7AB;
-  border-radius: 5px;
-  outline: none;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 1rem;
-  font-family: "FredokaOneRegular";
+  margin-bottom: 0.25rem;
+  margin-left: 10px;
+  color: #c1b9b1
 }
+
+.website-search-input {
+  display: block;
+  outline: 0;
+  appearance: none;
+  width: calc(100% - 20px) !important;
+  height: calc(2.5rem + 2px) !important;
+  padding: 0.375rem 0.75rem;
+  font-family: "FredokaOneRegular";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #38322d !important;
+  background-color: #c1b9b1 !important;
+  background-clip: padding-box;
+  border: 1px solid #c1b9b1;
+  border-radius: 0.5rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-left: 10px !important;
+  padding-left: 10px !important;
+  box-sizing: border-box !important;
+}
+
+  .website-search-input:focus {
+    color: #38322d !important;
+    background-color: #c1b9b1 !important;
+    border-color: #bdbdbd !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.35rem rgba(158, 158, 158, 0.25) !important;
+  }
+
+  .website-search-input::placeholder {
+    color: #84786c;
+  }
+
+.back-button {
+  margin-left: 4px;
+  margin-bottom: 10px;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  color: #c1b9b1;
+  transition: .2s linear;
+  background-color: #111224;
+  font-size: 24px;
+}
+
+  .back-button:hover {
+    box-shadow: 0 0 0 2px #c1b9b1, 0 0 0 4px #302d40;
+  }
+
+  .back-button:focus {
+    background-color: #302d40;
+  }
 
 .main {
   grid-area: main;
-  background-color: #ffffff;
-  overflow-x: hidden; /* Скрытие горизонтальной полосы прокрутки в основном контейнере */
+  overflow-x: hidden; 
+  padding-top: 10px; 
+  background: url('./images/background23.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .created-row {
-  display: flex; /* Используем flex-контейнер */
-  flex-direction: row; /* Ряд горизонтально */
-  flex-wrap: nowrap; /* Не переносить элементы на новую строку */
-  overflow-x: auto; /* Включаем горизонтальную прокрутку */
-  overflow-y: hidden; /* Отключаем вертикальную прокрутку */
-  padding-bottom: 10px; /* Отступ для удобства прокрутки */
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  scroll-snap-type: x proximity;
+  padding-bottom: 10px;
+  scrollbar-width: auto;
 }
 
-  /* Установка ширины карточек */
   .created-row > * {
-    flex-basis: 20rem; /* Ширина карточек */
-    flex-shrink: 0; /* Не сжимать карточки */
-    height: 600px; /* Фиксированная высота для всех карточек */
-    margin-right: 10px; /* Отступ между карточками */
+    flex-basis: 20rem; 
+    flex-shrink: 0; 
+    height: 600px;
+    margin-left: 5px;
+    margin-right: 5px; 
+    margin-bottom: 10px;
   }
 
-  /* Настройка карточек */
   .created-row .card {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Занять всю высоту родителя */
-    overflow: hidden; /* Скрыть переполнение */
+    height: 100%; 
+    overflow: hidden;
+    border-radius: 0.5rem;
   }
 
-    /* Настройка содержимого карточек */
     .created-row .card > .card-content {
+      -ms-overflow-style: none;
       flex-grow: 1;
-      overflow-y: auto; /* Вертикальная прокрутка для содержимого карточки */
+      overflow-y: auto; 
+      scrollbar-width: none;
+      background-color: #353245;
+      color: #c1b9b1;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .created-row .card > .card-image {
+      flex-basis: 25rem;
+      flex-shrink: 0;
+      overflow-y: hidden;
+      background-color: #242438;
+      color: #c1b9b1;
     }
 
 .subcontainer {
-  flex-basis: 20rem; /* Ширина карточки */
-  flex-shrink: 0; /* Отключаем сжатие */
-  margin-right: 10px; /* Отступ между карточками */
-}
-
-/* Скрытие полосы прокрутки для содержимого карточек */
-.card-content::-webkit-scrollbar {
-  display: none; /* Скрыть полосу прокрутки в WebKit браузерах */
-}
-
-.card-content {
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Настройка изображений в карточках */
-.created-row .card > .card-image {
-  flex-basis: 25rem;
+  flex-basis: 20rem;
   flex-shrink: 0;
-  overflow-y: hidden;
-  background-color: grey;
+  scroll-snap-align: start;
+  margin-right: 10px;
+}
+
+.card-content::-webkit-scrollbar {
+  display: none;
 }
 
 .footer {
@@ -181,16 +256,15 @@ form {
   grid-template-columns: 1fr auto;
   grid-template-areas:
     "about social-media";
-  gap: 20px;
   grid-area: footer;
-  background-color: #38322c;
-  color: white;
+  background-color: #111224;
   padding: 20px;
+  border-radius: 0.5rem;
 }
 
 .footer-icon {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .social-media {
@@ -200,102 +274,110 @@ form {
   font-family: "FredokaOneRegular";
 }
 
+.social-media p {
+  color: #eaeaea;
+}
+
 .about {
   grid-area: about;
   font-family: "FredokaOneRegular";
+  color: #eaeaea;
 }
 
-/* Общие стили для всех устройств выше остаются неизменными */
-
-/* Адаптивные стили для экранов до 768px (планшеты и телефоны) */
 @media (max-width: 768px) {
+  h2 {
+    font-size: 40px !important;
+  }
+
   .header {
-    grid-template-columns: 1fr; /* Сетка из одной колонки */
+    grid-template-columns: 1fr;
     grid-template-areas:
       "website-logo"
       "website-name"
       "header-content";
-    text-align: center; /* Центрируем содержимое */
+    text-align: center;
     padding: 10px;
+  }
+
+  .website-name {
+    padding-left: 30px;
   }
 
   .website-logo img {
     width: 60px;
-    height: 60px; /* Уменьшаем логотип */
+    height: 60px;
   }
 
   .header-content {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 10px; /* Увеличиваем расстояние между элементами */
+    gap: 10px;
   }
 
-  .search-info,
-  .search {
-    width: 100%; /* Занимает всю ширину контейнера */
+  .search-info, .search {
+    width: 100%; 
   }
 
   .main {
-    padding: 10px; /* Добавляем отступы для удобства чтения */
+    padding: 10px;
   }
 
   .created-row {
-    flex-wrap: wrap; /* Карточки располагаются в несколько строк */
-    justify-content: center; /* Центрируем карточки */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .subcontainer {
-    flex-basis: calc(100% - 20px); /* Карточка занимает всю ширину */
-    margin: 10px 0; /* Отступы между карточками */
+    flex-basis: calc(100% - 20px); 
+    margin: 10px 0;
   }
 
   .card {
-    height: auto; /* Автоматическая высота */
+    height: auto; 
   }
 
   .card-image {
-    height: auto; /* Изображение адаптируется под карточку */
+    height: auto; 
   }
 
   .footer {
-    grid-template-columns: 1fr; /* Одна колонка для футера */
+    grid-template-columns: 1fr;
     grid-template-areas:
       "about"
       "social-media";
-    text-align: center; /* Центрируем текст */
+    text-align: center;
   }
 
   .social-media {
-    justify-self: center; /* Центрируем социальные иконки */
+    justify-self: center;
   }
 
   .footer-icon {
-    width: 24px; /* Уменьшаем размер иконок */
+    width: 24px;
     height: 24px;
-    margin: 0 5px; /* Добавляем отступы между иконками */
+    margin: 0 5px; 
   }
 }
 
-/* Адаптивные стили для экранов до 480px (телефоны) */
 @media (max-width: 480px) {
   h2 {
-    font-size: 1.5rem; /* Уменьшаем заголовок */
+    font-size: 35px !important;
   }
 
   h3 {
-    font-size: 1.2rem; /* Уменьшаем подзаголовок */
+    font-size: 1.2rem; 
   }
 
   .header {
-    padding: 5px; /* Уменьшаем отступы */
+    padding: 5px; 
   }
 
   .card-content {
-    font-size: 0.9rem; /* Уменьшаем текст в карточках */
+    font-size: 0.9rem;
   }
 
   .card-action a {
-    font-size: 0.8rem; /* Уменьшаем текст ссылок */
+    font-size: 0.8rem;
   }
 }
 
@@ -323,6 +405,13 @@ form {
 @font-face {
   font-family: "ArmWrestlerRegular";
   src: url("./fonts/ArmWrestler.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "CaprasimoRegular";
+  src: url("./fonts/Caprasimo-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
